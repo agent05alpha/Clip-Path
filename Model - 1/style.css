@@ -1,0 +1,127 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+:root {
+    --BG-color: #333;
+
+    --BG-card: #000;
+    --text-color: #fff;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--BG-color);
+    transition: 0.5s ease-in-out;
+}
+
+.container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    flex-direction: column;
+
+}
+
+.title {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 17px;
+    width: 67px;
+    background: var(--BG-card);
+    clip-path: inset(0.5px round 8px 0);
+    font-size: 10px;
+    font-weight: bold;
+    padding: 3px;
+    color: var(--text-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border: none;
+    transition: 1s ease-in-out;
+}
+
+
+.container:hover .title {
+    color: var(--BG-card);
+    background: var(--text-color);
+}
+
+.card {
+    position: relative;
+    height: 200px;
+    width: 150px;
+    background: var(--BG-card);
+    color: var(--text-color);
+    /* background-color: rgba(0, 0, 0, 0.5); */
+    /* clip-path: path("M 10,20 L 60,20 L 70,10 L 70,10 L 80,0 L 140,0 L 150,10 L 150,190 L 140,200 L 10,200 L 0,190 L 0,30 L 10,20 Z"); */
+    clip-path: path("M 10,20 L 60,20 A 10,10 0,0,0 70,10 L 70,10 A 10,10 0,0,1 80,0 L 140,0 A 10,10 0,0,1 150,10 L 150,190 A 10,10 0,0,1 140,200 L 10,200 A 10,10 0,0,1 0,190 L 0,30 A 10,10 0,0,1 10,20 Z");
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 8px;
+    transition: 1s ease-in-out;
+}
+
+.container:hover .card {
+    color: var(--BG-card);
+    background: var(--text-color);
+}
+
+.card .image {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    overflow: hidden;
+    transition: 0.5s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid var(--text-color);
+}
+
+.container:hover .card>.image {
+    border: 2px solid var(--BG-color);
+}
+
+.card .image img {
+    width: 100%;
+    height: 100%;
+    transition: 0.5s ease-in-out;
+}
+
+.card .content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.card button {
+    font-size: 10px;
+    font-weight: bold;
+    padding: 4px;
+    cursor: pointer;
+    border: none;
+    border-radius: 50px;
+    background-color: var(--text-color);
+    transition: 0.5s ease-in-out;
+}
+
+.container:hover .card>button {
+    background-color: var(--BG-card);
+    color: var(--text-color);
+}
